@@ -13,5 +13,4 @@ async def start_http_server(port=8080):
 
     server = HTTPServer(("0.0.0.0", port), HTTPHandler)
 
-    # Run in a separate thread to avoid blocking asyncio
     await loop.run_in_executor(None, server.serve_forever)
